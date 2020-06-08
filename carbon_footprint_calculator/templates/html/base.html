@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <title>Footprint calculator</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <meta charset="UTF-8">
+  </head>
+  <body>
+  <div class="container">
+    <div class="head">
+      <h>Kalkulator śladu węglowego</h>
+    </div>
+    <div class="information">
+      {% block content_title %}
+        <table>Info</table>
+      {% endblock %}
+    </div>
+    <hr>
+    <div class="content">
+      {% block content %}
+      {% endblock %}
+    </div>
+  </div>
+  </body>
+</html>
