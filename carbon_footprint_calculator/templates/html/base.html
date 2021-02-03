@@ -11,16 +11,21 @@
     <div class="head">
       <h>Kalkulator śladu węglowego</h>
     </div>
+    <div class="row">
+    <div class="column">
     <div class="information">
       {% block content_title %}
         <table>Info</table>
       {% endblock %}
     </div>
-    <hr>
+    </div>
+  <div class="column">
     <div class="content">
       {% block content %}
       {% endblock %}
     </div>
+  </div>
+  </div>
   </div>
   </body>
 </html>

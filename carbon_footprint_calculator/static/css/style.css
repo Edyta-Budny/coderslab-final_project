@@ -17,12 +17,24 @@ div.head {
 
 }
 
+div.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+div.column {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
 div.information {
-  margin-left: 250px;
+  margin-left: auto;
   padding: 14px 40px;
   width: 300px;
   height: 300px;
-  border-radius: 8px;
   margin-top: 50px;
   font-size: 16px;
   font-weight: 200;
@@ -32,70 +44,73 @@ div.information {
   display: flex;
   align-items: center;
   text-align: justify;
+  border-right: 1px solid #DCFFD1;
 }
 
 div.content {
-  margin-top: -280px;
-}
-
-form.travel {
-   margin-top: -300px;
-}
-
-form.transport {
+  margin-right: auto;
+  padding: 14px 40px;
+  height: 300px;
+  border-radius: 8px;
   margin-top: 50px;
+  font-size: 16px;
+  font-weight: 200;
+  hyphens: auto;
+  line-height: 22px;
+  align-items: center;
+  text-align: justify;
 }
 
 div.button button {
   border: 1px solid #DCFFD1;
   background-color: #81CC6A;
   color: #DCFFD1;
-  padding: 14px 40px;
+  padding: 14px 20px;
   text-align: center;
   display: block;
   font-size: 16px;
   font-weight: 200;
-  margin-left: 700px;
   border-radius: 8px;
 }
 
 p {
-  margin-left: 660px;
-  padding: 10px 40px;
   font-size: 16px;
   font-weight: 200;
-  margin-top:0px;
+  margin-top: auto;
 }
 
 input.button {
-  margin-left: 700px;
   font-size: 16px;
   font-weight: 200;
   border-radius: 8px;
-  padding: 14px 40px;
+  padding: 14px 20px;
   border: 1px solid #DCFFD1;
   background-color: #81CC6A;
   color: #DCFFD1;
+  margin-block-end: 1em;
 }
 
 input {
   border: 1px solid #DCFFD1;
   border-radius: 6px;
-  padding: 2px 20px;
+  padding: 14px 20px;
   font-size: 16px;
   font-weight: 200;
   color: #DCFFD1;
   background-color: #81CC6A;
+  text-align: center;
+  width: 100px;
 }
 
 select {
   font-size: 16px;
   font-weight: 200;
-  padding: 14px 40px;
+  padding: 14px 20px;
   color: #DCFFD1;
   border-radius: 8px;
   border: 1px solid #DCFFD1;
   background-color: #81CC6A;
+  text-align-last: center;
 }
 
 hr {
@@ -113,8 +128,10 @@ sub {
 }
 
 div.result {
-  margin-left: 550px;
-  margin-top: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  margin-top: 50px;
 }
 
 button.button-result {
@@ -123,7 +140,7 @@ button.button-result {
   border: 1px solid #DCFFD1;
   background-color: #81CC6A;
   color: #DCFFD1;
-  padding: 14px 40px;
+  padding: 14px 20px;
   text-align: center;
   display: block;
   font-size: 16px;
@@ -137,7 +154,7 @@ button.button-main {
   border: 1px solid #DCFFD1;
   background-color: #81CC6A;
   color: #DCFFD1;
-  padding: 14px 40px;
+  padding: 14px 20px;
   text-align: center;
   display: block;
   font-size: 16px;
@@ -146,12 +163,10 @@ button.button-main {
 }
 
 button.main {
-  margin-left: 850px;
-  margin-top: -49px;
   border: 1px solid #DCFFD1;
   background-color: #81CC6A;
   color: #DCFFD1;
-  padding: 14px 40px;
+  padding: 14px 20px;
   text-align: center;
   display: block;
   font-size: 16px;
@@ -171,22 +186,6 @@ button.button {
 }
 
 button.main1 {
-  margin-left: 555px;
-  margin-top: 20px;
-  border: 1px solid #DCFFD1;
-  background-color: #81CC6A;
-  color: #DCFFD1;
-  padding: 14px 40px;
-  text-align: center;
-  display: block;
-  font-size: 16px;
-  font-weight: 200;
-  border-radius: 8px
-}
-
-button.calculator {
-  margin-left: 20px;
-  margin-top: 80px;
   border: 1px solid #DCFFD1;
   background-color: #81CC6A;
   color: #DCFFD1;
@@ -196,6 +195,22 @@ button.calculator {
   font-size: 16px;
   font-weight: 200;
   border-radius: 8px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+}
+
+
+button.calculator {
+  border: 1px solid #DCFFD1;
+  background-color: #81CC6A;
+  color: #DCFFD1;
+  padding: 14px 20px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 200;
+  border-radius: 8px;
+  margin-top: 50px;
 }
 
 div.result-text {
@@ -204,9 +219,13 @@ div.result-text {
 }
 
 ul.errorlist {
-  margin-left: 660px;
-  padding: 10px 40px;
+  padding: 10px 20px;
   font-size: 16px;
   font-weight: 200;
-  margin-top:0px;
+  list-style: none;
+}
+
+.form-group {
+    text-align-last: justify;
+    margin-block-end: 1em;
 }

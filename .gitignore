@@ -6,6 +6,9 @@ venv/bin/idea
 venv/lib/python3.7/site-packages/idea-0.1-py3.7.egg-info/
 venv/lib/python3.7/site-packages/idea.py
 project/local_settings.py
+carbon_footprint_calculator/__pycache__/
+carbon_footprint_calculator/migrations/__pycache__/
+final_project/__pycache__/
 
 
 

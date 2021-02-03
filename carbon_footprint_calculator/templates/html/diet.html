@@ -5,8 +5,8 @@
 {% block content %}
   <form method="post">
     {% csrf_token %}
-    {{ form.as_p}}
+    {{ form.as_p }}
     <input class="button" type="submit" value="Przelicz">
   </form>
-  <button onclick="location.href ='/main/'" class="main">Strona główna</button>
+   <button onclick="location.href ='/main/'" class="main">Strona główna</button>
 {% endblock %}
