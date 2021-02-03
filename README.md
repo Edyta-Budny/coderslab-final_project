@@ -27,12 +27,15 @@ Calculation of the carbon footprint for the categories:
 
 * Install the following dependencies using the command:
 
+```console
 $ pip install -r requirements.txt
+```
 
 * Run applications using the command:
 
+```console
 $ python manage.py runserver
-
+```
 
 ## Sources
 
