@@ -23,6 +23,17 @@ Calculation of the carbon footprint for the categories:
 
 * In progess
 
+## Start of application after saving it to your computer
+
+* Install the following dependencies using the command:
+
+$ pip install -r requirements.txt
+
+* Run applications using the command:
+
+$ python manage.py runserver
+
+
 ## Sources
 
 * More information about course: https://coderslab.pl/pl/kurs/back-end-developer-python/o-kursie
