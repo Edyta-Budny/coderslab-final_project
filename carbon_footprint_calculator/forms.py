@@ -4,8 +4,24 @@ from django.core.exceptions import ValidationError
 
 
 def AmountValidator(value):
-    if not value >= 1:
+    if not value > 0:
         raise ValidationError(f"Wartość musi być większa od 0")
+
+
+def GetCountryChoices():
+    countries = Country.objects.all().order_by("name")
+    # countries_choices = [
+    #     (country.equivalent, country.name) for country in countries
+    # ]
+    return [(country.equivalent, country.name) for country in countries]
+
+
+def GetProductsChoices():
+    products = Food.objects.all().order_by("name_food")
+    # products_choices = [
+    #     (product.equivalent, product.name_food) for product in products
+    # ]
+    return [(product.equivalent, product.name_food) for product in products]
 
 
 class HouseForm(forms.Form):
@@ -31,13 +47,9 @@ class TravelForm(forms.Form):
         label="Pokonany dystans w km",
         validators=[AmountValidator]
     )
-    countries = Country.objects.all().order_by("name")
-    countries_choices = [
-        (country.equivalent, country.name) for country in countries
-    ]
     country = forms.ChoiceField(
         label="Kraj zakwaterowania",
-        choices=countries_choices
+        choices=GetCountryChoices
     )
     number_of_night = forms.IntegerField(
         label="Liczba nocy",
@@ -57,13 +69,9 @@ class TransportForm(forms.Form):
 
 
 class FoodForm(forms.Form):
-    products = Food.objects.all().order_by("name_food")
-    products_choices = [
-        (product.equivalent, product.name_food) for product in products
-    ]
     product = forms.ChoiceField(
         label="Nazwa produktu",
-        choices=products_choices
+        choices=GetProductsChoices
     )
     consumption = forms.IntegerField(
         label="Spożycie w kaloriach",
