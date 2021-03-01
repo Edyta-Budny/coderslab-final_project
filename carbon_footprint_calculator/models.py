@@ -49,19 +49,39 @@ class InformationPage(models.Model):
 
 
 class House(models.Model):
-    household = models.IntegerField(choices=NUMBER_OF_PEOPLE_IN_HOUSEHOLD, verbose_name="Liczba osób w gospodarstwie domowym")
-    type_of_heating = models.CharField(max_length=120, choices=TYPE_OF_HEATING, verbose_name="Forma ogrzewania")
-    amount = models.IntegerField(verbose_name="Wartość zurzyta")
+    household = models.IntegerField(
+        choices=NUMBER_OF_PEOPLE_IN_HOUSEHOLD,
+        verbose_name="Liczba osób w gospodarstwie domowym"
+    )
+    type_of_heating = models.CharField(
+        max_length=120,
+        choices=TYPE_OF_HEATING,
+        verbose_name="Forma ogrzewania"
+    )
+    amount = models.IntegerField(
+        verbose_name="Wartość zużyta"
+    )
 
 
 class Travel(models.Model):
-    mode_of_transport = models.CharField(max_length=120, choices=MEANS_OF_TRANSPORT, verbose_name="Środek transportu")
-    length_of_distance = models.IntegerField(verbose_name="Pokonany dystans w km")
-    number_of_night = models.IntegerField(verbose_name="Liczba nocy")
+    mode_of_transport = models.CharField(
+        max_length=120,
+        choices=MEANS_OF_TRANSPORT,
+        verbose_name="Środek transportu"
+    )
+    length_of_distance = models.IntegerField(
+        verbose_name="Pokonany dystans w km"
+    )
+    number_of_night = models.IntegerField(
+        verbose_name="Liczba nocy"
+    )
 
 
 class Country(models.Model):
-    name = models.CharField(max_length=60, verbose_name="Kraj zakwaterowania")
+    name = models.CharField(
+        max_length=60,
+        verbose_name="Kraj zakwaterowania"
+    )
     equivalent = models.FloatField()
 
     @property
@@ -73,12 +93,20 @@ class Country(models.Model):
 
 
 class DailyTransport(models.Model):
-    form_of_moving = models.CharField(max_length=120, choices=DAILY_MEANS_OF_TRANSPORT, verbose_name="Środek transportu")
-    distance_in_km = models.IntegerField(verbose_name="Pokonany dystans w km")
+    form_of_moving = models.CharField(
+        max_length=120,
+        choices=DAILY_MEANS_OF_TRANSPORT,
+        verbose_name="Środek transportu"
+    )
+    distance_in_km = models.IntegerField(
+        verbose_name="Pokonany dystans w km"
+    )
 
 
 class Food(models.Model):
-    name_food = models.CharField(max_length=120)
+    name_food = models.CharField(
+        max_length=120
+    )
     equivalent = models.FloatField()
 
     @property
