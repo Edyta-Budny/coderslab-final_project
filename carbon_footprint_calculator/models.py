@@ -1,46 +1,16 @@
 from django.db import models
 
 NUMBER_OF_PEOPLE_IN_HOUSEHOLD = (
-    (1, 1),
-    (2, 2),
-    (3, 3),
-    (4, 4),
-    (5, 5),
-    (6, 6),
-    (7, 7),
-    (8, 8),
-    (9, 9),
-    (10, 10),
-)
-
-TYPE_OF_HEATING = (
-    ("energia elektryczna [kWh]", "energia elektryczna [kWh]"),
-    ("gaz ziemny [kWh]", "gaz ziemny [kWh]"),
-    ("węgiel [t]", "węgiel [t]"),
-    ("drewno opałowe [t]", "drewno opałowe [t]"),
-    ("LPG [l]", "LPG [l]"),
-    ("olej opałowy [l]", "olej opałowy [l]"),
-)
-
-MEANS_OF_TRANSPORT = (
-    ("pociąg", "pociąg"),
-    ("autokar", "autokar"),
-    ("somochód disel", "somochód disel"),
-    ("samochód hybrydowy", "samochód hybrydowy"),
-    ("samochód elektryczny", "samochód elektryczny"),
-    ("lot krajowy", "lot krajowy"),
-    ("lot krótkodystansowy < 3700 km", "lot krótkodystansowy < 3700 km"),
-    ("lot długodystansowy > 3700 km", "lot długodystansowy > 3700 km"),
-)
-
-DAILY_MEANS_OF_TRANSPORT = (
-    ("rower", "rower"),
-    ("tramwaj", "tramwaj"),
-    ("metro", "metro"),
-    ("autobus", "autobus"),
-    ("somochód disel", "somochód disel"),
-    ("samochód hybrydowy", "samochód hybrydowy"),
-    ("samochód elektryczny", "samochód elektryczny"),
+    (1, "1"),
+    (2, "2"),
+    (3, "3"),
+    (4, "4"),
+    (5, "5"),
+    (6, "6"),
+    (7, "7"),
+    (8, "8"),
+    (9, "9"),
+    (10, "10"),
 )
 
 
@@ -49,6 +19,20 @@ class InformationPage(models.Model):
 
 
 class House(models.Model):
+    ELECTRICITY = "E"
+    GAS = "G"
+    CARBON = "C"
+    FIREWOOD = "W"
+    LPG = "L"
+    FUEL_OIL = "O"
+    TYPE_OF_HEATING = [
+        (ELECTRICITY, "energia elektryczna [kWh]"),
+        (GAS, "gaz ziemny [kWh]"),
+        (CARBON, "węgiel [t]"),
+        (FIREWOOD, "drewno opałowe [t]"),
+        (LPG, "LPG [l]"),
+        (FUEL_OIL, "olej opałowy [l]"),
+    ]
     household = models.IntegerField(
         choices=NUMBER_OF_PEOPLE_IN_HOUSEHOLD,
         verbose_name="Liczba osób w gospodarstwie domowym"
@@ -64,6 +48,24 @@ class House(models.Model):
 
 
 class Travel(models.Model):
+    TRAIN = "T"
+    BUS = "B"
+    DISEL_CAR = "DE"
+    HYBRID_CAR = "HE"
+    ELECTRIC_CAR = "EC"
+    DOMESTIC_FLIGHT = "DF"
+    SHORT_HAUL_FLIGHT = "SF"
+    LONG_HAUL_FLIGHT = "LF"
+    MEANS_OF_TRANSPORT = [
+        (TRAIN, "pociąg"),
+        (BUS, "autokar"),
+        (DISEL_CAR, "somochód disel"),
+        (HYBRID_CAR, "samochód hybrydowy"),
+        (ELECTRIC_CAR, "samochód elektryczny"),
+        (DOMESTIC_FLIGHT, "lot krajowy"),
+        (SHORT_HAUL_FLIGHT, "lot krótkodystansowy < 3700 km"),
+        (LONG_HAUL_FLIGHT, "lot długodystansowy > 3700 km"),
+    ]
     mode_of_transport = models.CharField(
         max_length=120,
         choices=MEANS_OF_TRANSPORT,
@@ -93,6 +95,22 @@ class Country(models.Model):
 
 
 class DailyTransport(models.Model):
+    BIKE = "B"
+    TRAM = "T"
+    METRO = "M"
+    BUS = "B"
+    DISEL_CAR = "DE"
+    HYBRID_CAR = "HE"
+    ELECTRIC_CAR = "EC"
+    DAILY_MEANS_OF_TRANSPORT = [
+        (BIKE, "rower"),
+        (TRAM, "tramwaj"),
+        (METRO, "metro"),
+        (BUS, "autobus"),
+        (DISEL_CAR, "somochód disel"),
+        (HYBRID_CAR, "samochód hybrydowy"),
+        (ELECTRIC_CAR, "samochód elektryczny"),
+    ]
     form_of_moving = models.CharField(
         max_length=120,
         choices=DAILY_MEANS_OF_TRANSPORT,

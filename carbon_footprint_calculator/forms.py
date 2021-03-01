@@ -10,12 +10,12 @@ def AmountValidator(value):
 
 class HouseForm(forms.Form):
     household = forms.ChoiceField(label="Liczba osób w gospodarstwie domowym", choices=NUMBER_OF_PEOPLE_IN_HOUSEHOLD)
-    type_of_heating = forms.ChoiceField(label="Forma ogrzewania", choices=TYPE_OF_HEATING)
+    type_of_heating = forms.ChoiceField(label="Forma ogrzewania", choices=House.TYPE_OF_HEATING)
     amount = forms.IntegerField(label="Wartość zurzyta", validators=[AmountValidator])
 
 
 class TravelForm(forms.Form):
-    mode_of_transport = forms.ChoiceField(label="Środek transportu", choices=MEANS_OF_TRANSPORT)
+    mode_of_transport = forms.ChoiceField(label="Środek transportu", choices=Travel.MEANS_OF_TRANSPORT)
     length_of_distance = forms.IntegerField(label="Pokonany dystans w km", validators=[AmountValidator])
     countries = Country.objects.all().order_by("name")
     countries_choices = [(country.equivalent, country.name) for country in countries]
@@ -24,7 +24,7 @@ class TravelForm(forms.Form):
 
 
 class TransportForm(forms.Form):
-    form_of_moving = forms.ChoiceField(choices=DAILY_MEANS_OF_TRANSPORT, label="Środek transportu")
+    form_of_moving = forms.ChoiceField(choices=DailyTransport.DAILY_MEANS_OF_TRANSPORT, label="Środek transportu")
     distance_in_km = forms.IntegerField(label="Pokonany dystans w km", validators=[AmountValidator])
 
 
