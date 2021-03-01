@@ -23,6 +23,10 @@ Calculation of the carbon footprint for the categories:
 
 * In progess
 
+## Requirements
+
+* The application supports Python 3.4 to 3.8
+
 ## Start of application after saving it to your computer
 
 * Install the following dependencies using the command:
