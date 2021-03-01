@@ -1,12 +1,24 @@
-{% extends "html/base.html" %}
-{% block content_title %}
-  <table>{{ info.0.information }}</table>
+{#{% extends "html/base.html" %}#}
+{#{% block content_title %}#}
+{#  <table>{{ info.0.information }}</table>#}
+{#{% endblock %}#}
+{#{% block content %}#}
+{#  <form  class ="travel "method="post">#}
+{#    {% csrf_token %}#}
+{#    {{ form.as_p }}#}
+{#    <input class="button" type="submit" value="Przelicz">#}
+{#  </form>#}
+{#      <button onclick="location.href ='/main/'" class="main">Strona główna</button>#}
+{#{% endblock %}#}
+
+{% extends "html/base-calculate.html" %}
+{% block title %}
+  <h>Podróż</h>
 {% endblock %}
 {% block content %}
-  <form  class ="travel "method="post">
+  <form method="post">
     {% csrf_token %}
     {{ form.as_p }}
     <input class="button" type="submit" value="Przelicz">
   </form>
-      <button onclick="location.href ='/main/'" class="main">Strona główna</button>
 {% endblock %}

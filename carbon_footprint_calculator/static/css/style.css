@@ -10,6 +10,13 @@ div.container {
   color: #DCFFD1;
 }
 
+div.container1{
+  font-family: sans-serif;
+  padding-top: 70px;
+  width: 100%;
+  height: 550px;
+  color: #DCFFD1;
+}
 div.head {
   font-weight: 300;
   font-size: xx-large;
@@ -59,6 +66,7 @@ div.content {
   line-height: 22px;
   align-items: center;
   text-align: justify;
+  display: flex;
 }
 
 div.button button {
@@ -66,11 +74,14 @@ div.button button {
   background-color: #81CC6A;
   color: #DCFFD1;
   padding: 14px 20px;
-  text-align: center;
+  /*text-align: center;*/
   display: block;
   font-size: 16px;
   font-weight: 200;
   border-radius: 8px;
+  /*width: 300px;*/
+  width: 100%;
+  text-align: justify;
 }
 
 p {
@@ -83,14 +94,16 @@ input.button {
   font-size: 16px;
   font-weight: 200;
   border-radius: 8px;
-  padding: 14px 20px;
+  padding: 14px 40px;
   border: 1px solid #DCFFD1;
   background-color: #81CC6A;
   color: #DCFFD1;
   margin-block-end: 1em;
+  margin-top: 20px;
+  width: 195px;
 }
 
-input {
+input, select {
   border: 1px solid #DCFFD1;
   border-radius: 6px;
   padding: 14px 20px;
@@ -99,19 +112,20 @@ input {
   color: #DCFFD1;
   background-color: #81CC6A;
   text-align: center;
-  width: 100px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-select {
-  font-size: 16px;
-  font-weight: 200;
-  padding: 14px 20px;
-  color: #DCFFD1;
-  border-radius: 8px;
-  border: 1px solid #DCFFD1;
-  background-color: #81CC6A;
-  text-align-last: center;
-}
+/*select {*/
+  /*!*font-size: 16px;*!*/
+  /*font-weight: 200;*/
+  /*padding: 14px 20px;*/
+  /*color: #DCFFD1;*/
+  /*border-radius: 8px;*/
+  /*border: 1px solid #DCFFD1;*/
+  /*background-color: #81CC6A;*/
+  /*text-align-last: center;*/
+/*}*/
 
 hr {
   color: #DCFFD1;
@@ -130,8 +144,17 @@ sub {
 div.result {
   margin-left: auto;
   margin-right: auto;
+  /*text-align: center;*/
+  margin-top: 50px;
+  width: 400px;
+}
+
+div.result1 {
+  margin-left: auto;
+  margin-right: auto;
   text-align: center;
   margin-top: 50px;
+  width: 400px;
 }
 
 button.button-result {
@@ -195,9 +218,26 @@ button.main1 {
   font-size: 16px;
   font-weight: 200;
   border-radius: 8px;
+  /*margin-left: auto;*/
+  /*margin-top: 20px;*/
   margin-left: auto;
-  margin-right: auto;
+  margin-top: -65px;
+  width: 190px;
+}
+
+button.main2 {
+  border: 1px solid #DCFFD1;
+  background-color: #81CC6A;
+  color: #DCFFD1;
+  padding: 14px 40px;
+  text-align: center;
+  display: block;
+  font-size: 16px;
+  font-weight: 200;
+  border-radius: 8px;
+  margin-left: auto;
   margin-top: 20px;
+  margin-right: auto;
 }
 
 
@@ -228,4 +268,9 @@ ul.errorlist {
 .form-group {
     text-align-last: justify;
     margin-block-end: 1em;
+}
+
+label {
+  display: inline-block;
+  padding: 6px 6px 6px 0;
 }

@@ -7,15 +7,16 @@
     <meta charset="UTF-8">
   </head>
   <body>
-  <div class="container">
+  <div class="container1">
     <div class="head">
-      <h>Ślad węglowy</h>
+        {% block title %}
+        {% endblock %}
     </div>
-    <div class="result1">
-      {% block content_result %}
+    <div class="result">
+      {% block content %}
       {% endblock %}
+    <button onclick="location.href ='/main/'" class="main1">Strona główna</button>
     </div>
-  <button onclick="location.href ='/main/'" class="main2">Strona główna</button>
   </div>
   </body>
 </html>

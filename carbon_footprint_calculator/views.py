@@ -13,12 +13,13 @@ class MainView(View):
 
 class HouseView(View):
     def get(self, request):
-        info = InformationPage.objects.all().filter(id=2)
+        # info = InformationPage.objects.all().filter(id=2)
         form = HouseForm()
-        return render(request, "html/house.html", {"info": info, "form": form})
+        # return render(request, "html/house.html", {"info": info, "form": form})
+        return render(request, "html/house.html", {"form": form})
 
     def post(self, request):
-        info = InformationPage.objects.all()
+        # info = InformationPage.objects.all()
         form = HouseForm(request.POST)
         if form.is_valid():
             household = form.cleaned_data["household"]
@@ -46,7 +47,8 @@ class HouseView(View):
             house = House.objects.create(household=household, type_of_heating=type_of_heating, amount=amount)
             return render(request, "html/result-house.html", {"house": house, "result": result})
         else:
-            return render(request, "html/house.html", {"info": info, "form": form})
+            # return render(request, "html/house.html", {"info": info, "form": form})
+            return render(request, "html/house.html", { "form": form})
 
 
 class TravelView(View):
@@ -54,6 +56,7 @@ class TravelView(View):
         info = InformationPage.objects.all().filter(id=3)
         form = TravelForm()
         return render(request, "html/travel.html", {"info": info, "form": form})
+        return render(request, "html/travel.html", {"form": form})
 
     def post(self, request):
         info = InformationPage.objects.all()
@@ -92,16 +95,18 @@ class TravelView(View):
             return render(request, "html/result-travel.html", {"travel": travel, "result": result})
         else:
             return render(request, "html/house.html", {"info": info, "form": form})
+            # return render(request, "html/house.html", {"form": form})
 
 
 class TransportView(View):
     def get(self, request):
-        info = InformationPage.objects.all().filter(id=4)
+        # info = InformationPage.objects.all().filter(id=4)
         form = TransportForm()
-        return render(request, "html/transport.html", {"info": info, "form": form})
+        # return render(request, "html/transport.html", {"info": info, "form": form})
+        return render(request, "html/transport.html", {"form": form})
 
     def post(self, request):
-        info = InformationPage.objects.all()
+        # info = InformationPage.objects.all()
         form = TransportForm(request.POST)
         if form.is_valid():
             form_of_moving = form.cleaned_data["form_of_moving"]
@@ -131,17 +136,19 @@ class TransportView(View):
             transport = DailyTransport.objects.create(form_of_moving=form_of_moving, distance_in_km=distance_in_km)
             return render(request, "html/result-transport.html", {"transport": transport, "result": result})
         else:
-            return render(request, "html/house.html", {"info": info, "form": form})
+            # return render(request, "html/house.html", {"info": info, "form": form})
+            return render(request, "html/house.html", {"form": form})
 
 
 class DietView(View):
     def get(self, request):
-        info = InformationPage.objects.all().filter(id=5)
+        # info = InformationPage.objects.all().filter(id=5)
         form = FoodForm()
-        return render(request, "html/diet.html", {"info": info, "form": form})
+        # return render(request, "html/diet.html", {"info": info, "form": form})
+        return render(request, "html/diet.html", {"form": form})
 
     def post(self, request):
-        info = InformationPage.objects.all()
+        # info = InformationPage.objects.all()
         form = FoodForm(request.POST)
         if form.is_valid():
             product = form.cleaned_data["product"]
@@ -150,4 +157,5 @@ class DietView(View):
             result = round((int(consumption) * float(equivalent)), 2)
             return render(request, "html/result-diet.html", {"result": result})
         else:
-            return render(request, "html/diet.html", {"info": info, "form": form})
+            # return render(request, "html/diet.html", {"info": info, "form": form})
+            return render(request, "html/diet.html", {"form": form})
