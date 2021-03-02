@@ -31,7 +31,8 @@ class HouseForm(forms.Form):
     )
     type_of_heating = forms.ChoiceField(
         label="Forma ogrzewania",
-        choices=House.TYPE_OF_HEATING)
+        choices=House.TYPE_OF_HEATING
+    )
     amount = forms.IntegerField(
         label="Wartość zurzyta",
         validators=[AmountValidator]
