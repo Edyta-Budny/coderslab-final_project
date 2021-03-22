@@ -1,5 +1,7 @@
 from django.db import models
 
+from carbon_footprint_calculator.data.extractor import GetAccommodationData
+
 NUMBER_OF_PEOPLE_IN_HOUSEHOLD = [(x, str(x)) for x in range(1, 11)]
 
 
@@ -71,6 +73,7 @@ class Travel(models.Model):
 class Country(models.Model):
     name = models.CharField(
         max_length=60,
+        choices=GetAccommodationData(),
         verbose_name="Kraj zakwaterowania"
     )
     equivalent = models.FloatField()
