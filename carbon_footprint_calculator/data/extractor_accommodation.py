@@ -20,4 +20,4 @@ def GetAccommodationData(pdf_path=PDF_PATH, csv_path=CSV_PATH):
     df.dropna(inplace=True)
 
     # Dictionary where the key is "Country" and the value is "Equivalent"
-    return list(zip(df["Country"], df["Equivalent"]))
+    return dict(zip(df["Country"], df["Equivalent"]))
