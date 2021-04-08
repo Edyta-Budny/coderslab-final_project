@@ -1,4 +1,4 @@
-Name_food,Equivalent
+Name,Equivalent
 lamb,39.2
 beef,27
 cheese,13.5
@@ -15,3 +15,4 @@ beans,2
 vegetables,2
 milk,1.9
 fruits,1.1
+lentil, 0.9
