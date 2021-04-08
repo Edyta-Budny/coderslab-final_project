@@ -25,4 +25,3 @@ class SimpleTest(TestCase):
     def test_diet(self):
         response = self.client.get('/diet/')
         self.assertEqual(response.status_code, 200)
-
