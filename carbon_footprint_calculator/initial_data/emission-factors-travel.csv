@@ -1,4 +1,4 @@
-Means of transport,Equivalent
+Mode of transport,Factor
 train,0.015
 bus,0.03
 disel car,0.18
@@ -7,4 +7,3 @@ electric car,0.06
 domestic flight,0.123
 short haul flight,0.076
 long haul flight,0.094
-
