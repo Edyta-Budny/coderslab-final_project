@@ -1,8 +1,8 @@
 from django.db import models
 
 
-class InformationPage(models.Model):
-    information = models.TextField()
+class Information(models.Model):
+    text = models.TextField()
 
 
 class Household(models.Model):
@@ -20,7 +20,7 @@ class Heating(models.Model):
         verbose_name="Wartość zużyta",
         null=True
     )
-    equivalent = models.FloatField()
+    factor = models.FloatField()
 
 
 class Travel(models.Model):
@@ -36,7 +36,7 @@ class Travel(models.Model):
         verbose_name="Liczba nocy",
         null=True
     )
-    equivalent = models.FloatField()
+    factor = models.FloatField()
 
 
 class Country(models.Model):
@@ -44,7 +44,7 @@ class Country(models.Model):
         max_length=60,
         verbose_name="Kraj zakwaterowania"
     )
-    equivalent = models.FloatField()
+    factor = models.FloatField()
 
 
 class DailyTransport(models.Model):
@@ -56,7 +56,7 @@ class DailyTransport(models.Model):
         verbose_name="Pokonany dystans w km",
         null=True
     )
-    equivalent = models.FloatField()
+    factor = models.FloatField()
 
 
 class Product(models.Model):
@@ -68,4 +68,4 @@ class Product(models.Model):
         verbose_name="Spożycie w kaloriach",
         null=True
     )
-    equivalent = models.FloatField()
+    factor = models.FloatField()
